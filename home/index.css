@@ -1,0 +1,142 @@
+body
+{
+    margin:0 0 auto 0;
+    padding:0;
+}
+#top
+{
+    text-align:center;
+    background-color:#C80002;
+}
+#topImg
+{
+    display: block;
+    width:100%;
+    height:100px;
+}
+.close
+{
+    position: absolute;
+    top:10px;
+    right:10px;
+    font-size:1.5em;
+    color:#ffffff;
+    text-decoration: none;
+    height:18px;
+    width:18px;
+    background-color:rgba(0, 0, 0, 0.3);
+    line-height:13px;
+}
+.ng-toolbar
+{
+    position: relative;
+    height:35px;
+    width: 100%;
+    min-width:1190px;           /*设置元素的最小宽度，小于此宽度，div不会再缩小，浏览器会产生滚动条*/
+    background-color:#f5f5f5;
+    border:1px solid #eee;
+}
+.ng-toolbar-left
+{
+    float:left;
+}
+.ng-toolbar-right
+{
+    float:right;
+}
+
+.ng-toolbar nav a,div
+{
+    display: block;/*使导航栏的所有a标签并排从左到右排列*/
+    float:left;
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    line-height: 35px;
+    padding:0px 10px;
+}
+.ng-toolbar nav a:hover
+{
+    color:#F60;
+}
+@font-face {            /*阿里iconfont的使用http://www.iconfont.cn/*/
+    font-family: 'ng-iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.ng-iconfont{
+    font-family:"ng-iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.ng-backhome
+{
+    margin-right: 3px;
+}
+.ng-down-box
+{
+    display:none;
+}
+.ng-down-box
+{
+    position: absolute;
+    top:35px;
+    left: -1px;
+    background-color: #fff;
+    border:1px solid #eee;
+    border-top: none;
+    padding-bottom: 5px;
+    margin-right:-1px;
+}
+#ngdown-1
+{
+    width:550px;
+}
+#ngdown-2
+{
+    left:-85px;
+    width:168px;
+}
+.ng-down a,div
+{
+    display: block;
+    position: relative;
+    float: left;
+}
+.ng-down:hover
+{
+    background-color: #fff;
+    border:1px solid #eee;
+    margin:-1px;
+}
+.ng-down:hover .ng-down-box /*hover的时候下拉列表元素出现*/
+{
+    display: block;
+}
+.ng-down-box dl
+{
+    display: inline-block;
+    width:176px;
+    border-right:1px solid #eee;
+}
+.ng-down-box dl dt
+{
+    font-family: "Microsoft Yahei";
+    font-size:14px;
+    font-weight: bold;
+}
+.ng-down-box dd
+{
+    margin:0;
+}
+.ng-down-box dd a
+{
+    display: inline-block;
+    width:70px;
+    padding:0;
+}
