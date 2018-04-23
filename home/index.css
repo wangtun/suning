@@ -305,7 +305,7 @@ ul.nmc-sort-list li a
     width:4500px;/*6张图片的宽度*/
     height:300px;
     position: absolute;
-    left: -750px;/*第一张图片被超出了浏览器范围*/
+    left:-750px;/*ul左移一个图像，使第一张第一个显示*/
 }
 .imgs img
 {
@@ -318,52 +318,68 @@ ul.nmc-sort-list li a
     width:750px;
     height: 30px;
     text-align: center;
-    bottom:20px;
+    bottom:0px;
     z-index:1;/*z-index无效的情况1、父标签 position属性为relative；2、问题标签无position属性（不包括static）；3、问题标签含有浮动(float)属性。*/
 }
 .banner-nav ul
 {
     display: inline-block;
+    padding:0 7px;
+    margin:0;
+    height:22px;
+    border-radius:12px;  
+    background-color:rgba(0,0,0,0.45);
 }
 
 .banner-nav ul li a
 {
     display:inline-block;
-    width:20px;
-    height:20px;
-    line-height: 20px;
+    width:10px;
+    height:10px;
+    line-height: 22px;
     text-align: center;
     text-decoration: none;
+    font-size:0;
+    border-radius: 50%;
+    margin:5px;
 }
 .previous,.next
 {
     display: inline-block;
-    width:20px;
-    height:60px;
-    font-size:16px;
-    background: #fff;
+    width:36px;
+    height:64px;
+    background-image:url(../img/icon-index.png);
+    background-position: -335px -235px;
     position: absolute;
     z-index: 2;
-    text-align:center;
-    line-height: 50px;
     top:0;
     bottom:0;
     margin:auto;/*绝对定位居中两个条件：四围为0，margin:auto*/
     cursor: pointer;
     left: 0;
 }
+.previous:hover
+{
+    background-image: url(../img/icon-index.png);
+    background-position: -224px -235px;
+}
+.next:hover
+{
+    background-image: url(../img/icon-index.png);
+    background-position: -391px -235px;
+}
 .next
 {
     left:auto;
     right:0;
+    background-image: url(../img/icon-index.png);
+    background-position:-279px -235px;
 }
 a.current
 {
     background-color:#C80002;
-    color:#fff;
 }
 a.hidden 
 {
     background-color: #fff;
-    color:#000;
 }

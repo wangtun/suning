@@ -15,29 +15,42 @@ window.onload=function(){
     var navUl=navdiv.getElementsByTagName("ul")[0];/*获取下方圆点的ul */
     var previous=document.getElementsByClassName("previous")[0];/*上一个*/
     var next=document.getElementsByClassName("next")[0];/*下一个 */
-    var index=0;
+    var index=1;
     var animTimer;
     var timer;
     play();
+    for(var i=0;i<navUl.children.length;i++){
+        navUl.children[i].index=i+1;/**得给index赋值，否则是underfind */
+        navUl.children[i].onmouseover=function(){
+            index=this.index;/**很重要，否则onmouseout的时候不知道轮到哪福图片了 */
+            initImgs(this.index);
+            btnShow(this.index-1);
+        };
+        navUl.children[i].onmouseout=function(){
+            play();
+        };
+    }
     previous.onclick=function(){
         /**控制ul整体向右移动 */
-        initImgs(index);
         index=index-1;
-        if(index<0){
-            index=3;
+        if(index==0)
+        {
+            index=4;
         }
+        initImgs(index+1);/*此时ul为点击之前的位置，即当下位置 */
         animate(750);
-        btnShow(index);
+        btnShow(index-1);
     }
     next.onclick=function(){
-        initImgs(index);
         index=index+1;
-        if(index>3)
+        if(index==5)
         {
-            index=0;
+            index=1;
         }
+        /**当图片为最后一张时，ul跳转到第 */
+        initImgs(index-1);/*此时ul为next之前的位置，即当下位置 */
         animate(-750);
-        btnShow(index);
+        btnShow(index-1);
     }
     function btnShow(cur_index){
         for(var i=0;i<navUl.children.length;i++)
@@ -47,7 +60,7 @@ window.onload=function(){
         navUl.children[cur_index].children[0].className="current";
     }
     function animate(offset){
-        var newLeft=parseInt(imgsUl.offsetLeft)+offset;
+        var newLeft=parseInt(imgsUl.offsetLeft)+offset;/**下一张图片的位置 */
         if(newLeft>-750){
             donghua(-3000);
         }
@@ -63,6 +76,8 @@ window.onload=function(){
     function donghua(offset){
         clearInterval(animTimer);
         animTimer=setInterval(function(){
+            /** 逐渐靠近下一张图片的位置*/
+            /*console.log(imgsUl.offsetLeft);*/
             imgsUl.style.left=imgsUl.offsetLeft+(offset-imgsUl.offsetLeft)/10+"px";
             if(imgsUl.offsetLeft-offset<10&&imgsUl.offsetLeft-offset>-10){
                 imgsUl.style.left=offset+"px";
@@ -78,18 +93,8 @@ window.onload=function(){
     function initImgs(cur_index){
         clearInterval(timer);
         clearInterval(animTimer);
-        var off=cur_index*750+750;
+        var off=cur_index*750;
         imgsUl.style.left=-off+"px";
     }
-    for(var i=0;i<navUl.children.length;i++){
-        navUl.children[i].index=i;/**得给index赋值，否则是underfind */
-        navUl.children[i].onmouseover=function(){
-            index=this.index;/**很重要，否则onmouseout的时候不知道轮到哪福图片了 */
-            initImgs(this.index);
-            btnShow(this.index);
-        };
-        navUl.children[i].onmouseout=function(){
-            play();
-        };
-    }
+    
 }
