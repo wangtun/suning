@@ -3,30 +3,35 @@ body
     margin:0 0 auto 0;
     padding:0;
 }
+img
+{
+    border:none;
+}
 #top
 {
     width: 100%;
     background-color:#C80002;
     text-align: center;
+    vertical-align: middle;
 }
 #topImg
 {
     display: block;
     height:100px;
-    margin:0 auto;
+    width:100%;
 }
 .close
 {
     position: absolute;
     top:10px;
     right:30px;
-    font-size:1.5em;
+    font-size:25px;
     color:#ffffff;
     text-decoration: none;
-    height:18px;
-    width:18px;
+    height:20px;
+    width:20px;
     background-color:rgba(0, 0, 0, 0.3);
-    line-height:13px;
+    line-height: 18px;
 }
 .ng-toolbar
 {
@@ -35,7 +40,7 @@ body
     width: 100%;
     min-width:1190px;           /*设置元素的最小宽度，小于此宽度，div不会再缩小，浏览器会产生滚动条*/
     background-color:#f5f5f5;
-    border:1px solid #eee;
+    border-bottom:1px solid #eee;
 }
 .ng-toolbar-t
 {
@@ -172,11 +177,11 @@ body
 .tpl-mainHeader
 {
     width: 1190px;
+    height:100px;
     margin:0 auto;
 }
 .tpl-mainHeader img
 {
-    display: inline-block;
     vertical-align: middle;
 }
 .tpl-mainHeader>img /*取第一个子元素*/
@@ -191,11 +196,13 @@ body
     width: 100%;
     height: 35px;
     background-color: #ED3B3B;
+    position: relative;
 }
 .mainNav-category
 {
-    width:1190px;
+    width: 1190px;
     margin: 0 auto;
+    font-size: 0;
 }
 .mainNav-category a
 {
@@ -238,10 +245,9 @@ body
 }
 ul.nmc-sort-list
 {
-    width:190px;
+    width:189px;
     height:449px;
     padding: 0;
-    padding-top: 12px;
     margin:0;
     background-image: url(../img/150518168866650858.png);
     border-right:1px solid #E6E3E3;
@@ -252,7 +258,7 @@ ul.nmc-sort-list li
 {
     width:60px;
     height:30px;
-    margin:0 0 6px 25px;
+    margin:6px 0 6px 25px;
 }
 ul.nmc-sort-list li a
 {
@@ -261,7 +267,7 @@ ul.nmc-sort-list li a
 .nmc-all
 {
     line-height: 35px;
-    width:191px!important;/*提升优先级*/
+    width:190px!important;/*提升优先级*/
     height:35px;
     text-align: left!important;
     font-weight: bold;
@@ -382,4 +388,102 @@ a.current
 a.hidden 
 {
     background-color: #fff;
+}
+.banner-slide-small
+{
+    display: inline-block;
+    width: 250px;
+    height: 300px;
+}
+.banner-slide-small a
+{
+    padding:0;
+    margin: 0;
+    line-height: 300px;
+}
+.banner-horizontal-list
+{
+    padding:0;
+    width:1000px;
+}
+.ju-sale-bg
+{
+    position: absolute;
+    top:35px;
+    width: 100%;
+    height: 450px;
+    font-size: 0;
+    z-index: -10;
+    overflow: hidden;
+}
+.bg-right
+{
+    position: absolute;
+    width:50%;
+    top: 0;
+    left: 50%;
+    padding-left:595px;
+    overflow: hidden;
+}
+.bg-left
+{
+    position: absolute;
+    width:50%;
+    top:0;
+    right:50%;
+    padding-right:595px;
+    text-align: right;
+    overflow: hidden;
+}
+
+.tpl-recommand-brand
+{
+    width:100%;
+    min-width: 1190px;
+}
+.rb-cont
+{
+    width:1190px;
+    margin:0 auto;
+}
+.rb-title
+{
+    
+    height:50px;
+}
+.rb-title h2
+{
+    color: #ed3b3b;
+    font-family: "Microsoft Yahei";
+    font-size: 20px;
+    display: inline-block;
+
+}
+.rb-title span
+{
+    color:#999;
+}
+.rb-title dl
+{
+    float:right;
+    
+}
+.rb-title dl dt,.rb-title dl dd
+{
+    display: inline-block;
+    margin-left:20px;
+    font-size:12px;
+}
+.rb-title em
+{
+    font-style: normal;
+}
+.rb-title a
+{
+    text-decoration: none;
+    color: #000000;
+}
+.rb-title a:hover
+{
+    color:#ed3b3b;
 }
